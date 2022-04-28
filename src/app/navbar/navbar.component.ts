@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   title = 'Anime recognition';
+  navbarHomeTitle = 'Home';
+  navbarUploadTitle = 'Upload';
   constructor() { }
 
   ngOnInit(): void {
