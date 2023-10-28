@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-4">
+        <div class="row">
+            <h2>File upload:</h2>
+            <img [src]="url" height="auto">
+        </div>
+        <div class="row">
+            <input type="file" (change)="onFileSelected($event)"/>
+            <button type="button" (click)="onUpload()">Upload</button>
+        </div>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4">
+        <h2>Found:</h2>
+            <div *ngFor="let find of wynik">
+                <video id="video" style="width:100%; height:100%" autoplay [muted]="'muted'" loop>
+                    <source src={{find.video}} type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>{{find.anilist.title.english}}</h3>
+                <p>Episode: {{find.episode}}</p>
+                <p>Similarity: {{(find.similarity * 100)-(find.similarity * 100)%0.01}} %</p>
+                <br>
+            </div>
+    </div>
+</div>
